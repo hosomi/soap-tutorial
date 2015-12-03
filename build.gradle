@@ -1,0 +1,42 @@
+group 'com.aokolnychyi'
+version '1.0-SNAPSHOT'
+
+// The buildScript block determines which plugins, task classes, and other classes are available for use in
+// the rest of the build script. Without a buildScript block, you can use everything that ships with Gradle
+// out-of-the-box. If you additionally want to use third-party plugins, task classes, or other classes
+// (in the build script!), you have to specify the corresponding dependencies in the buildScript block.
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.0.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'simple-web-service'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework.boot:spring-boot-starter-ws"
+    compile "wsdl4j:wsdl4j:1.6.1"
+
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}

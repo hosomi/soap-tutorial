@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://github.com/aokolnychyi/soap-tutorial">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:getUserRequest>
+            <gs:name>Adrian</gs:name>
+        </gs:getUserRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
